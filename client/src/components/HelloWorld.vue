@@ -171,6 +171,34 @@
     </div>
 
 
+    <!-- Agenda
+    ================================================== -->
+    <section class="diary" id="diary">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center mb-5">
+            <div class="col-lg-12 text-center">
+                <h1 class="no-span">Agenda</h1>
+            </div>
+          </div>
+          <div class="col-md-6 col-md-offset-3">
+            <p><b>8:00 h</b> Registro <br>
+                <b>8:20 h</b> Desayuno, el director de Estratégica, Arturo López Gallo, nos hablará acerca de
+                los retos de las empresas para generar demanda. <br>
+                <b>9:00 h</b> Plática con los expertos en Webinar. (Posibles nombres de la plática:
+                “Entrenamiento empresarial” “Marketing workout” “Sabiduría del Marketing” “Aprendizaje
+                interactivo”)<br>
+                Webinars, por qué y para qué usar ON24 - <b>Paulina Albores</b><br>
+                Cómo hacer generación de demanda a través de los webinars - <b>Sandra Armendariz</b><br>
+                <b>10:00 h</b> Experiencia práctica. ¡Creemos un webinar entre todos, ON24!<br>
+                <b>11:00 h</b> Encuesta de satisfacción <br>
+                <b>11:30 h</b> Rifa de cabina de webinar
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Regístrate
     ================================================== -->
     <div class="bg-primary py-5" id="headquarters">
