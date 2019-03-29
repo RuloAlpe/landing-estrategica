@@ -1,5 +1,6 @@
 <template>
   <div>
+      <notifications group="foo" />
       <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="mainNav">
           <div class="container">
               <!-- Brand and toggle get grouped for better mobile display -->

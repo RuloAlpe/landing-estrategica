@@ -27,7 +27,7 @@
                 <h3 class="capitalize">Regístrate</h3>
                 <p>Regístrate, adquiere tu insignia de <b>Webinar Pro</b> y participa en la rifa para usar
                     nuestra cabina de webinars.</p>
-                <form name="sentMessage" id="contactForm" role="form" novalidate>
+                <div name="sentMessage" id="contactForm" role="form" novalidate>
                   <div class="row">
                     <div class="control-group form-group col-lg-12">
                       <div class="controls">
@@ -78,7 +78,7 @@
                     </div>
 
                     <div class="col-xs-12 noPadding check text-right">
-                      <input v-model="terms" type="checkbox" id="box-1">
+                      <input v-model="terms" type="checkbox" id="box-1" :checked="terms">
                       <label for="box-1">Acepto la política de privacidad</label>
                     </div>
 
@@ -96,7 +96,7 @@
                     </p>
 
                   </div>
-                </form>
+                </div>
               </div>
             </div>
           </div>
@@ -287,8 +287,8 @@ export default {
       email: null,
       phone: null,
       company: null,
-      selected: '',
-      selected2: '',
+      selected: 'El Taj Mahal',
+      selected2: 'Auto propio',
       terms: false
     };
   },
@@ -337,8 +337,17 @@ export default {
         this.email = null;
         this.phone = null;
         this.company = null;
-        this.selected = '';
-        this.selected2 = '';
+        this.selected = 'El Taj Mahal',
+        this.selected2 = 'Auto propio',
+        this.terms = false,
+
+        this.$notify({
+          group: 'foo',
+          width: '400px',
+          duration: 4000,
+          title: 'Gracias por participar',
+          text: 'Se te enviará un email en un momento.'
+        });
       }
     }
   }
