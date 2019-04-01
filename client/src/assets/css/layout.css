@@ -2,6 +2,7 @@
 STYLES
 ::::::::::::::::::::::::::::::::::::*/
 @charset "utf-8";
+@import url("fontawesome-4.4.0.min.css");
 
 /* Imported files and fonts
 ----------------------------------------------------------------------------- */
@@ -18,6 +19,9 @@ STYLES
   margin-left: 0 !important;
 }
 
+.noPadding {
+  padding: 0;
+}
 /* -------------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
@@ -28,6 +32,10 @@ STYLES
 html,
 body {
   height: 100%;
+}
+
+a {
+  cursor: pointer;
 }
 
 /* Header
@@ -52,7 +60,6 @@ header .header-content {
 }
 
 header .header-content img {
-  /* width: 550px; */
   max-height: 15vh;
   width: auto;
 }
@@ -67,43 +74,111 @@ header .months img {
   width: 550px;
 }
 
+/*@media screen and (max-width:450px) {}*/
 
-@media screen and (max-width:450px) {
-  header {
-    background: #cccccc url(../img/bg-hero.png) no-repeat bottom right;
-    height: 850px;
-  }
-
+/* Smartphone */
+@media all and (max-width: 480px) {
+  header {height: 850px;}
   header .header-content {
-    text-align: center;
-    padding: 8em 1em 2em;
+    padding-top: 7em;
+    padding-top: 14vh;
   }
+  header .months {padding: 0em 1em;}
 
-  header .months {
-    text-align: center;
-    padding: 0em 1em;
+}
+
+/* Tablet */
+@media all and (max-width: 767px) {
+  header {
+    background: #000000 url(../img/bg-hero-mobile.png) no-repeat top center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    height: 100vh;
   }
-
-  /* header .header-content img {
-    width: 250px;
-  } */
+  #relativeblock {
+    position: relative;
+    z-index: 2;
+    margin-top: -20em;
+    margin-top: -38vh;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 2em;
+    padding: 0;
+    text-align: center;
+  }
 }
 
 /* Diary
 ----------------------------------------------------------------------------- */
 .diary {
-  background: #cccccc url(../img/bg-diary.png) no-repeat bottom center;
+  background: #000000 url(../img/bg-diary.png) no-repeat bottom center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  padding: 20px 0 30px 0;
+  padding: 20px 0 650px 0;
 }
 
-@media (min-width: 992px) {
-  .diary {
-    padding: 80px 0 500px;
+@media all and (min-width: 420px) {
+  .diary {padding: 20px 0 400px 0;}
+}
+
+@media screen and (min-width:750px){
+  .diary {padding: 20px 0 320px 0;}
+}
+
+@media screen and (min-width:900px){
+  .diary {padding: 20px 0 400px 0;}
+}
+
+@media screen and (min-width:1024px){
+  .diary {padding: 20px 0 600px 0;}
+}
+
+/* on24
+----------------------------------------------------------------------------- */
+.twenty-four {
+  background: #e9e9e7 url(../img/twenty-four-mb.png) no-repeat bottom center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 20px 0 650px 0;
+  color:#000000;
+}
+
+@media screen and (min-width:750px){
+  .twenty-four {
+    background: #000000 url(../img/twenty-four-750.png) no-repeat bottom center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 20px 0 320px 0;
+    color:#000000;
   }
+
+  /*padding: 20px 0 320px 0;*/
+}
+
+@media screen and (min-width:900px){
+.twenty-four {
+  background: #000000 url(../img/twenty-four.png) no-repeat bottom center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 20px 0 400px 0;
+  color:#000000;
+}
+/*.twenty-four {padding: 20px 0 400px 0;}*/
+}
+
+@media screen and (min-width:1024px){
+ .twenty-four {padding: 20px 0 600px 0;}
 }
 
 /* Form wrapper
@@ -158,17 +233,30 @@ select {
 /* Relative block
 ----------------------------------------------------------------------------- */
 #relativeblock {
-  position: relative;
   z-index: 2;
   margin-top: -20em;
   margin-top: -38vh;
   margin-left: 0;
   margin-right: 0;
   margin-bottom: 2em;
-  padding: 30px;
+  padding: 0px;
   text-align: center;
 }
 
+#relativeblockTwo {
+  z-index: 2;
+  margin-top: -40em;
+  margin-top: -58vh;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 2em;
+  padding: 20px;
+  text-align: center;
+}
+
+#relativeblockTwo h1 {
+  font-size: 2.4em;
+}
 /* Page header
 ----------------------------------------------------------------------------- */
 h1.no-span {
@@ -215,6 +303,14 @@ h1.noSpanWhite:after {
   width: 100px;
 }
 
+/* Smartphone */
+@media all and (max-width: 480px) {
+h1.no-span:before,
+h1.no-span:after {width:50px;}
+
+h1.noSpanWhite:before,
+h1.noSpanWhite:after {width: 50px;}
+}
 
 /* Lema
 ----------------------------------------------------------------------------- */
@@ -228,34 +324,35 @@ h1.noSpanWhite:after {
 
 /* Block
 ----------------------------------------------------------------------------- */
+
 .block {
   background-color: #f7f2ed;
   color: #000000;
 }
 
 .block-left {
-  padding: 20px 80px 20px 20px;
+  padding: 20px 80px 20px 60px;
   border-radius: 0px 30px 80px 0px;
   -webkit-border-radius: 0px 30px 80px 0px;
   -moz-border-radius: 0px 30px 80px 0px;
   -o-border-radius: 0px 30px 80px 0px;
   -ms-border-radius: 0px 30px 80px 0px;
+  /*margin-right: 10px;*/
 }
 
 .block-right {
-  padding: 20px 20px 20px 80px;
+  padding: 20px 50px 20px 80px;
   border-radius: 30px 0px 0px 80px;
   -webkit-border-radius: 30px 0px 0px 80px;
   -moz-border-radius: 30px 0px 0px 80px;
   -o-border-radius: 30px 0px 0px 80px;
   -ms-border-radius: 30px 0px 0px 80px;
+  /*margin-left: 10px;*/
 }
 
 /* Copyright
 ----------------------------------------------------------------------------- */
-#copyright {}
-
-#copyright * {
+#copyright {
   margin: 0;
   padding: 0;
 }
@@ -292,6 +389,7 @@ MOBILE VIEW
 .navbar-default .nav>li>a:focus {
   font-size: 14px;
   color: #ffffff;
+  text-align: center;
 }
 
 .navbar-default .nav>li>a:hover,
@@ -311,7 +409,8 @@ MOBILE VIEW
 }
 
 .navbar-default .navbar-toggle {
-  border-color: #ddd;
+  background-color: #ffffff;
+  border-color: none; 
 }
 
 .navbar-default .navbar-toggle:hover,
@@ -320,7 +419,7 @@ MOBILE VIEW
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-  background-color: #888;
+  background-color: #000000;
 }
 
 .navbar-default .navbar-nav>.open>a,
@@ -379,10 +478,9 @@ MEDIAQUERY DESK
 
   .navbar-default .nav>li>a:hover,
   .navbar-default .nav>li>a:focus:hover {
-    color: #000000;
+    color: #ffffff;
     border-bottom: 2px solid #56bee0;
   }
-
 
   .navbar-default .navbar-nav>.open>a,
   .navbar-default .navbar-nav>.open>a:hover,
@@ -435,10 +533,13 @@ MEDIAQUERY DESK
 
   .navbar-default.affix .nav>li>a:hover,
   .navbar-default.affix .nav>li>a:focus:hover {
-    color: #56bee0;
+    color: #ffffff;
     border-bottom: 2px solid #56bee0;
   }
 }
+
+/*.navbar-fixed-top{z-index: 20;}*/
+
 
 /* Button styles
 ----------------------------------------------------------------------------- */
@@ -446,6 +547,7 @@ MEDIAQUERY DESK
   border: none;
   border-radius: 12px;
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  transition: background-color 0.3s;
 }
 
 .btn-md {
@@ -461,57 +563,8 @@ MEDIAQUERY DESK
   border-radius: 0.95em;
 }
 
-/* COLOURS
+/* Checkboxes styles
 ----------------------------------------------------------------------------- */
-/* Button styles */
-.btn-primary {
-  color: #fff;
-  background-color: #56bee0;
-  border-color: #56bee0;
-}
-
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active {
-  color: #fff;
-  background-color: #000000 !important;
-}
-
-.btn-primary:active,
-.btn-primary:focus {
-  box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
-}
-
-.btn-inverse {
-  color: #337ab7;
-  background-color: #f8f9fa;
-  border-color: #f8f9fa;
-}
-
-.btn-inverse:hover,
-.btn-inverse:focus,
-.btn-inverse:active {
-  color: #337ab7;
-  background-color: lightgray !important;
-}
-
-.btn-inverse:active,
-.btn-inverse:focus {
-  box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
-}
-
-/* -------------------------------------------------------------------------- */
-/* -------------------------------------------------------------------------- */
-/* -------------------------------------------------------------------------- */
-/* -------------------------------------------------------------------------- */
-
-/* =============================================================================
-   Desk design: Max width 900px
-   ========================================================================== */
-
-
-/*Checkboxes styles*/
-
 .check {
   margin-top: 0.6em;
   margin-bottom: 0.6em;
@@ -567,39 +620,170 @@ input[type="checkbox"]:checked+label:before {
   transform: rotate(45deg);
 }
 
-
-
-
-
-
-/* media queries */
-/* media queries */
-/* media queries */
-
-
-/* Tablet */
-@media all and (max-width: 767px) {
-  header {
-    background: #000000 url(../img/bg-hero-mobile.png) no-repeat top center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 100%;
-    height: 100vh;
-  }
-  #relativeblock {
-    position: relative;
-    z-index: 2;
-    margin-top: -20em;
-    margin-top: -38vh;
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 2em;
-    padding: 0;
-    text-align: center;
-  }
+/* Modal
+-----------------------------------------------------------------------------*/
+.modal {
+  z-index: 9999;
 }
+.modal-content {
+    background-color: #000000;
+    border: none;
+    color:#ffffff;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+.modal-footer {
+    border-top: none;
+}
+
+.close {
+    color: #fff;
+    font-size: 28px;
+    opacity: 1;
+}
+
+.close:hover {
+    color: #fff;
+    opacity: 1;
+}
+
+.pleca{position:relative;}
+.pleca img {
+  position: absolute;
+  width: 100%; 
+  padding:0; 
+  margin:-1px 0 0 0;
+  top:0; 
+  }
+
+
+/* Wrapperbox
+----------------------------------------------------------------------- */
+.wrapperbox{
+  padding:50px 0 40px ; 
+  text-align:center; 
+  line-height:1.6;
+}
+
+.wrapperbox .infobox{
+  display:block; 
+  position:relative; 
+  padding:55px 35px 35px 35px; 
+  border:1px solid;
+  height:13em; 
+}
+
+.wrapperbox .infobox i{
+  display:inline-block;
+  position:absolute; 
+  top:0; 
+  left:50%; 
+  width:50px; 
+  height:50px; 
+  line-height:50px; 
+  margin:-25px 0 0 -25px; 
+  font-size:18px; 
+  z-index:1;
+}
+
+.wrapperbox .infobox i::after{
+  position:absolute; 
+  top:5px; 
+  right:5px; 
+  bottom:5px; 
+  left:5px; 
+  border:none; 
+  z-index:-1;
+}
+
+.wrapperbox .infobox .fa{
+  font-size:18px;
+}
+
+.wrapperbox i, .wrapperbox i::after{
+  border-radius:50%;
+}
+
+
+@media all and (min-width: 420px) {
+.wrapperbox .infobox{height:11em; }
+}
+@media all and (min-width: 720px) {
+.wrapperbox .infobox{height:15em; }
+}
+
+/* COLOURS
+----------------------------------------------------------------------------- */
+/* Button styles */
+.btn-primary {
+  color: #fff;
+  background-color: #56bee0;
+  border-color: #56bee0;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  color: #fff;
+  background-color: #000000 !important;
+}
+
+/*
+.btn-primary:active,
+.btn-primary:focus {
+  box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
+}
+*/
+
+.btn-inverse {
+  color: #56bee0;
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+
+.btn-inverse:hover,
+.btn-inverse:focus,
+.btn-inverse:active {
+  color:#ffffff;
+  background-color: #56bee0;
+}
+
+/*
+.btn-inverse:active,
+.btn-inverse:focus {
+  box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
+}
+*/
+
+/* wrapperbox */
+.wrapperbox .infobox{
+  color:#000000; 
+  background-color:#FFFFFF; 
+  border-color:#D7D7D7;
+}
+.wrapperbox .infobox i{
+  color:#FFFFFF; 
+  background-color:#000000;
+}
+.wrapperbox .infobox i::after{
+  border-color:rgba(255,255,255,.6);
+}
+
+
+.fondoPiedra {
+  background-image:url('../img/bg-speakers.png');
+}
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* media queries */
+
+/* Only Big desktop */
+@media all and (min-width: 1281px) {}
 
 /* Only tablet */
 @media all and (min-width:768px) and (max-width: 992px) {}
@@ -607,8 +791,15 @@ input[type="checkbox"]:checked+label:before {
 /* Only desktop */
 @media all and (min-width: 768px) {}
 
-/* Only Big desktop */
-@media all and (min-width: 1281px) {}
-
 /* Smartphone */
-@media all and (max-width: 480px) {}
+@media all and (max-width: 480px) {
+  h1 {
+    text-align: center;
+  }
+  .py-7 {
+    padding: 10rem 0 6rem 0;
+  }
+  .py-6 {
+    padding: 0 0 6rem 0;
+  }
+}
