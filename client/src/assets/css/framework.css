@@ -5,7 +5,6 @@ STYLES
 
 /* RESET STYLES
 ----------------------------------------------------------------------------- */
-html{overflow-y:scroll; overflow-x:hidden;}
 *, *::before, *::after{box-sizing:border-box;}
 a{outline:none; text-decoration:none;}
 a:hover, a:active{outline:none; text-decoration:none;}
@@ -23,28 +22,51 @@ address, article, aside, figcaption, figure, footer, header, main, nav, section{
 body, input, textarea, select{
   font-family: 'ProximaNova-Light';
   font-style: normal;}
-h1, h2, h3, h4, h5, h6, .heading, b {
+
+h1, h2, h3, h4, h5, h6, b {
   font-family: 'ProximaNova-Bold';
   font-weight: 300;
   font-style: normal;}
 
 /* GENERAL STYLES
 ----------------------------------------------------------------------------- */
-h1, h2, h3, h4, h5, h6, .heading{text-transform: uppercase;}
+.heading{
+  font-family: 'ProximaNova-Light';
+  text-transform: uppercase;
+  font-weight: 300;
+}
 
 h1{
   font-size: 3.5em;
   line-height: 0.9em;
 }
-h2{font-size: 3em;}
-h3{font-size: 2em;}
 
+h2{font-size: 3em;}
+
+h3{
+  font-size: 2em;
+  font-weight: bold;
+}
+
+@media all and (max-width: 480px) {
+  h1{
+    font-size: 3em;
+    line-height: 0.9em;
+  }
+
+  h2{font-size: 2.5em;}
+
+  h3{
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+}
 
 address{font-style:normal; font-weight:normal;}
 
 hr {
-  max-width: 50px;
-  border-width: 3px;
+  max-width: 270px;
+  border-width: 2px;
 }
 
 hr.light {border-color: #fff;}
@@ -56,12 +78,18 @@ hr.light {border-color: #fff;}
 
 p {font-size: 1em;}
 
-.txt1 {
-  font-size: 1.30em;
-}
+.txt1 {font-size: 1.30em;}
 
 /* SPACING, MARGIN AND PADDING
 ----------------------------------------------------------------------------- */
+/* Margin*/
+.my-0{margin:0;}
+.my-1{margin:.25em 0;}
+.my-2{margin:.5em 0;}
+.my-3{margin:1em 0;}
+.my-4{margin:1.5em 0;}
+.my-5{margin:3em 0;}
+
 /* Margin bottom */
 .mb-0{margin-bottom:0;}
 .mb-1{margin-bottom:.25rem;}
@@ -69,14 +97,11 @@ p {font-size: 1em;}
 .mb-3{margin-bottom:1rem;}
 .mb-4{margin-bottom:1.5rem;}
 .mb-5{margin-bottom:3rem;}
+.mb-6{margin-bottom:6rem;}
 
-/* Margin bottom */
-.my-0{margin:0;}
-.my-1{margin:.25em 0;}
-.my-2{margin:.5em 0;}
-.my-3{margin:1em 0;}
-.my-4{margin:1.5em 0;}
-.my-5{margin:3em 0;}
+/* Margin top */
+.mt-0{margin-top:0;}
+
 
 /* Padding */
 .p-0{padding:0;}
@@ -94,12 +119,26 @@ p {font-size: 1em;}
 .py-4{padding:1.5rem 0 1.5rem 0;}
 .py-5{padding:3rem 0 3rem 0;}
 .py-6{padding:6rem 0 6rem 0;}  
+.py-7{padding:15rem 0 6rem 0;}  
 
 .nospace {margin:0; padding:0; list-style:none;}
 
 /* Pushright */
 .pushright li{margin-right:20px;}
 .pushright li:last-child{margin-right:0;}
+
+
+@media all and (min-width: 420px) {
+  .py-7{padding:9rem 0 6rem 0;} 
+}
+@media all and (min-width: 720px) {
+  .py-7{padding:8rem 0 8rem 0;} 
+}
+
+@media all and (min-width: 900px) {
+  .py-7{padding:13rem 0 6rem 0;} 
+}
+
 
 /* DISPLAY PROPERTIES
 ----------------------------------------------------------------------------- */
@@ -117,8 +156,9 @@ p {font-size: 1em;}
 .bold{font-weight:bold;}
 .uppercase{text-transform:uppercase;}
 .capitalize{text-transform:capitalize;}
-.capitalise{text-transform:capitalize;}
+.lowercase{text-transform:lowercase;}
 .hidden{display:none;}
+.underline{text-decoration: underline;}
 
 /* IMAGE STYLES
 ----------------------------------------------------------------------------- */
@@ -175,10 +215,10 @@ predeterminada una anchura del 100% */
 ----------------------------------------------------------------------------- */
 body{color:; background-color:#000000;}
 
-a{color:#337ab7;}
-a:active, a:focus{color:#286090;}/* IE10 + 11 Bugfix - prevents grey background */
+a{color:#56bee0;}
+a:active, a:focus, a:hover{color:#56bee0;}/* IE10 + 11 Bugfix - prevents grey background */
 
-hr {border-color: #337ab7;}
+hr {border-color: #000000;}
 hr.light {border-color: #fff;}
 
 .text-primary {color:#337ab7;}
@@ -189,7 +229,7 @@ hr.light {border-color: #fff;}
 .bg-default {background-color:#ffffff; color:#333;}
 .bg-primary {background-color: #000000; color:#fff;}
 .bg-secondary {background-color:#e9e9e7; color:#000;}
-.bg-tertiary {background-color:transparent; color:#ffffff;}
+.bg-tertiary {background-color:transparent; color:#000000;}
 .bg-degraded{
     background: #19265C; /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(#19265C, #009BDB); /* For Safari 5.1 to 6.0 */
@@ -203,17 +243,18 @@ hr.light {border-color: #fff;}
 .overlay::after{color:inherit; background-color:rgba(0,0,0,.55);}
 .overlay.light::after{background-color:rgba(255,255,255,.55);}
 
-/* Others
------------------------------------------------------------------------------ */
-.show-grid{margin-bottom:15px}
- .show-grid [class^=col-]{
-  padding-top:10px;
-  padding-bottom:10px;
-  background-color:#eee;
-  background-color:rgba(86,61,124,.15);
-  border:1px solid #ddd;border:1px solid rgba(86,61,124,.2)
- }
- 
+
+/* Image filter */
+.speakers .col-md-6,
+.speakers .col-md-3,
+.speakers .col-xs-11
+{
+    position: relative;
+    min-height: 1px;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
 /* -------------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
@@ -236,3 +277,15 @@ hr.light {border-color: #fff;}
   .fl_left, .fl_right{display:block; float:none;}
 	.imgl, .imgr{display:inline-block; float:none; margin:0 0 10px 0;}
 }
+
+/* Only tablet */
+@media all and (min-width:768px) and (max-width: 992px) {}
+
+/* Only desktop */
+@media all and (min-width: 768px) {}
+
+/* Only Big desktop */
+@media all and (min-width: 1281px) {}
+
+/* Smartphone */
+@media all and (max-width: 480px) {}
